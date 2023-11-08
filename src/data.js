@@ -6,7 +6,7 @@ export const sample_foods=[
       "cookTime": 30,
       "origins": ["Italian", "Fast Food", "Cheese", "Tomato"],
       "stars": 4.5,
-      "imageUrl": "https://example.com/pizza.jpg",
+      "imageUrl": "https://www.laespanolaaceites.com/wp-content/uploads/2019/06/pizza-con-chorizo-jamon-y-queso-1080x671.jpg",
       "favorite":true,
       "tags": ["Italian", "Fast Food", "Cheese", "Tomato"]
     },
@@ -17,7 +17,7 @@ export const sample_foods=[
       "cookTime": 45,
       "origins": ["Italian", "Fast Food", "Cheese", "Tomato"],
       "stars": 4.8,
-      "imageUrl": "https://example.com/sushi.jpg",
+      "imageUrl": "https://imag.bonviveur.com/sushi-casero.webp",
       "favorite":true,
       "tags": ["Japanese", "Seafood", "Rice", "Fish"]
     },
@@ -28,7 +28,7 @@ export const sample_foods=[
       "cookTime": 20,
       "origins": ["Italian", "Fast Food", "Cheese", "Tomato"],
       "stars": 4.2,
-      "imageUrl": "https://example.com/burger.jpg",
+      "imageUrl": "https://imag.bonviveur.com/sushi-casero.webp",
       "favorite":true,
       "tags": ["American", "Fast Food", "Beef", "Bread"]
     },
@@ -39,7 +39,7 @@ export const sample_foods=[
       "cookTime": 25,
       "origins": ["Italian", "Fast Food", "Cheese", "Tomato"],
       "stars": 4.6,
-      "imageUrl": "https://example.com/pasta.jpg",
+      "imageUrl": "https://imag.bonviveur.com/sushi-casero.webp",
       "favorite":false,
       "tags": ["Italian", "Noodles", "Tomato Sauce"]
     },
@@ -50,7 +50,7 @@ export const sample_foods=[
       "cookTime": 15,
       "origins": ["Italian", "Fast Food", "Cheese", "Tomato"],
       "stars": 4.7,
-      "imageUrl": "https://example.com/tacos.jpg",
+      "imageUrl": "https://imag.bonviveur.com/sushi-casero.webpg",
       "favorite":true,
       "tags": ["Mexican", "Street Food", "Beef", "Corn Tortilla"]
     }

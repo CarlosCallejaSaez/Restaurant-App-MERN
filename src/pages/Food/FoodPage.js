@@ -17,7 +17,7 @@ export default function FoodPage() {
     if (idFood) {
       setFood(idFood);
     } else {
-      console.error(`Alimento con ID ${id} no encontrado.`);
+      console.error(` No ${id} `);
     }
   }, [id]);
   

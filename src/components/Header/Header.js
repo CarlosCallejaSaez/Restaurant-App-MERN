@@ -1,23 +1,21 @@
-import React from 'react'
-import classes from './header.module.css';
-import { Link } from 'react-router-dom';
+import React from "react";
+import classes from "./header.module.css";
+import { Link } from "react-router-dom";
 
 export default function Header() {
+  const user = { name: "Carlos" };
 
-    const user={name: 'Carlos'}
-
-    const cart={
-        totalCount:10,
-    }
+  const cart = {
+    totalCount: 10,
+  };
   return (
     <header className={classes.header}>
-        <div className={classes.container}>
+      <div className={classes.container}>
+        <Link to="/" className={classes.logo}>
+          Delicatessen Carlos
+        </Link>
 
-            <Link to="/" className={classes.logo}>
-                Delicatessen Carlos
-             </Link>
-
-             <nav>
+        <nav>
           <ul>
             {user ? (
               <li className={classes.menu_container}>
@@ -31,20 +29,18 @@ export default function Header() {
             ) : (
               <Link to="/login">Login</Link>
             )}
-            </ul>
+          </ul>
 
-            <li>
-              <Link to="/cart">
-                Cart
-                {cart.totalCount > 0 && (
-                  <span className={classes.cart_count}>{cart.totalCount}</span>
-                )}
-              </Link>
-            </li>
-        
-       
-            </nav>
-        </div>
+          <li>
+            <Link to="/cart">
+              Cart
+              {cart.totalCount > 0 && (
+                <span className={classes.cart_count}>{cart.totalCount}</span>
+              )}
+            </Link>
+          </li>
+        </nav>
+      </div>
     </header>
-  )
+  );
 }

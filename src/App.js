@@ -1,13 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
-import Header from './components/Header/Header';
-import AppRoutes from './AppRoutes';
+import logo from "./logo.svg";
+import "./App.css";
+import Header from "./components/Header/Header";
+import AppRoutes from "./AppRoutes";
 
 function App() {
   return (
     <>
-    <Header/>
-    <AppRoutes/>
+      <Header />
+      <AppRoutes />
     </>
   );
 }

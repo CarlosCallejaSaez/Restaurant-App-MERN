@@ -2,28 +2,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     margin-top: 3rem;
+    justify-content: center;
   }
   
   .details {
-    width: 28rem;
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 25rem;
   }
   
   .details form {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
   }
   
-  .register {
+  .login {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 1rem;
   }
-  

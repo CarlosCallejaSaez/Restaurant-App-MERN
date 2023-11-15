@@ -1,20 +1,20 @@
-import React from "react";
-import classes from "./header.module.css";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useCart } from '../../hooks/useCart';
+import classes from './header.module.css';
+import { useAuth } from '../../hooks/useAuth';
 
 export default function Header() {
-  const user = { name: "Carlos" };
+  const { user, logout } = useAuth();
 
-  const cart = {
-    totalCount: 10,
-  };
+  const { cart } = useCart();
+
   return (
     <header className={classes.header}>
       <div className={classes.container}>
         <Link to="/" className={classes.logo}>
-          Delicatessen Carlos
+        Delicatessen Carlos
         </Link>
-
         <nav>
           <ul>
             {user ? (
@@ -23,22 +23,22 @@ export default function Header() {
                 <div className={classes.menu}>
                   <Link to="/profile">Profile</Link>
                   <Link to="/orders">Orders</Link>
-                  <h4>Logout</h4>
+                  <a onClick={logout}>Logout</a>
                 </div>
               </li>
             ) : (
               <Link to="/login">Login</Link>
             )}
-          </ul>
 
-          <li>
-            <Link to="/cart">
-              Cart
-              {cart.totalCount > 0 && (
-                <span className={classes.cart_count}>{cart.totalCount}</span>
-              )}
-            </Link>
-          </li>
+            <li>
+              <Link to="/cart">
+                Cart
+                {cart.totalCount > 0 && (
+                  <span className={classes.cart_count}>{cart.totalCount}</span>
+                )}
+              </Link>
+            </li>
+          </ul>
         </nav>
       </div>
     </header>

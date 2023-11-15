@@ -1,9 +1,9 @@
-import React from "react";
-import { useForm } from "react-hook-form";
-import Title from "../Title/Title";
-import Input from "../Input/Input";
-import Button from "../Button/Button";
-import { useAuth } from "../../hooks/useAuth";
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import Title from '../Title/Title';
+import Input from '../Input/Input';
+import Button from '../Button/Button';
+import { useAuth } from '../../hooks/useAuth';
 
 export default function ChangePassword() {
   const {
@@ -14,7 +14,7 @@ export default function ChangePassword() {
   } = useForm();
 
   const { changePassword } = useAuth();
-  const submit = (passwords) => {
+  const submit = passwords => {
     changePassword(passwords);
   };
 
@@ -25,7 +25,7 @@ export default function ChangePassword() {
         <Input
           type="password"
           label="Current Password"
-          {...register("currentPassword", {
+          {...register('currentPassword', {
             required: true,
           })}
           error={errors.currentPassword}
@@ -34,7 +34,7 @@ export default function ChangePassword() {
         <Input
           type="password"
           label="New Password"
-          {...register("newPassword", {
+          {...register('newPassword', {
             required: true,
             minLength: 5,
           })}
@@ -44,11 +44,11 @@ export default function ChangePassword() {
         <Input
           type="password"
           label="Confirm Password"
-          {...register("confirmNewPassword", {
+          {...register('confirmNewPassword', {
             required: true,
-            validate: (value) =>
-              value != getValues("newPassword")
-                ? "Passwords Do No Match"
+            validate: value =>
+              value != getValues('newPassword')
+                ? 'Passwords Do No Match'
                 : true,
           })}
           error={errors.confirmNewPassword}

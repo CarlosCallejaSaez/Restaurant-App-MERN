@@ -1,10 +1,10 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import Price from "../../components/Price/Price";
-import Title from "../../components/Title/Title";
-import { useCart } from "../../hooks/useCart";
-import classes from "./cartPage.module.css";
-import NotFound from "../../components/NotFound/NotFound";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Price from '../../components/Price/Price';
+import Title from '../../components/Title/Title';
+import { useCart } from '../../hooks/useCart';
+import classes from './cartPage.module.css';
+import NotFound from '../../components/NotFound/NotFound';
 export default function CartPage() {
   const { cart, removeFromCart, changeQuantity } = useCart();
   return (
@@ -16,7 +16,7 @@ export default function CartPage() {
       ) : (
         <div className={classes.container}>
           <ul className={classes.list}>
-            {cart.items.map((item) => (
+            {cart.items.map(item => (
               <li key={item.food.id}>
                 <div>
                   <img src={`${item.food.imageUrl}`} alt={item.food.name} />
@@ -28,9 +28,7 @@ export default function CartPage() {
                 <div>
                   <select
                     value={item.quantity}
-                    onChange={(e) =>
-                      changeQuantity(item, Number(e.target.value))
-                    }
+                    onChange={e => changeQuantity(item, Number(e.target.value))}
                   >
                     <option>1</option>
                     <option>2</option>

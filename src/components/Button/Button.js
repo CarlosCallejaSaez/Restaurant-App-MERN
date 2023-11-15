@@ -1,4 +1,4 @@
-import classes from "./button.module.css";
+import classes from './button.module.css';
 
 export default function Button({
   type,
@@ -30,11 +30,11 @@ export default function Button({
 }
 
 Button.defaultProps = {
-  type: "button",
-  text: "Submit",
-  backgroundColor: "#e72929",
-  color: "white",
-  fontSize: "1.3rem",
-  width: "12rem",
-  height: "3.5rem",
+  type: 'button',
+  text: 'Submit',
+  backgroundColor: '#e72929',
+  color: 'white',
+  fontSize: '1.3rem',
+  width: '12rem',
+  height: '3.5rem',
 };

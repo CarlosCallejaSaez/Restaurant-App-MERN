@@ -1,39 +1,44 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import Price from "../../components/Price/Price";
-import StarRating from "../../components/StarRating/StarRating";
-import Tags from "../../components/Tags/Tags";
-import { getById } from "../../services/foodService";
-import classes from "./foodPage.module.css";
-import { sample_foods } from "../../data";
-
+import React, { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import Price from '../../components/Price/Price';
+import StarRating from '../../components/StarRating/StarRating';
+import Tags from '../../components/Tags/Tags';
+import { useCart } from '../../hooks/useCart';
+import { getById } from '../../services/foodService';
+import classes from './foodPage.module.css';
+import NotFound from '../../components/NotFound/NotFound';
 export default function FoodPage() {
   const [food, setFood] = useState({});
   const { id } = useParams();
+  const { addToCart } = useCart();
+  const navigate = useNavigate();
+
+  const handleAddToCart = () => {
+    addToCart(food);
+    navigate('/cart');
+  };
 
   useEffect(() => {
-    const idFood = sample_foods.find((item) => item.id == id);
-
-    if (idFood) {
-      setFood(idFood);
-    } else {
-      console.error(` No ${id} `);
-    }
+    getById(id).then(setFood);
   }, [id]);
-
   return (
     <>
-      <p>Food page </p>
-      {food && (
+      {!food ? (
+        <NotFound message="Food Not Found!" linkText="Back To Homepage" />
+      ) : (
         <div className={classes.container}>
-          <img src={food.imageUrl} alt={food.name}></img>
+          <img
+            className={classes.image}
+            src={`${food.imageUrl}`}
+            alt={food.name}
+          />
 
           <div className={classes.details}>
             <div className={classes.header}>
               <span className={classes.name}>{food.name}</span>
               <span
                 className={`${classes.favorite} ${
-                  food.favorite ? "" : classes.not
+                  food.favorite ? '' : classes.not
                 }`}
               >
                 ❤
@@ -44,7 +49,7 @@ export default function FoodPage() {
             </div>
 
             <div className={classes.origins}>
-              {food.origins?.map((origin) => (
+              {food.origins?.map(origin => (
                 <span key={origin}>{origin}</span>
               ))}
             </div>
@@ -52,7 +57,7 @@ export default function FoodPage() {
             <div className={classes.tags}>
               {food.tags && (
                 <Tags
-                  tags={food.tags.map((tag) => ({ name: tag }))}
+                  tags={food.tags.map(tag => ({ name: tag }))}
                   forFoodPage={true}
                 />
               )}
@@ -68,7 +73,7 @@ export default function FoodPage() {
               <Price price={food.price} />
             </div>
 
-            <button>Add To Cart</button>
+            <button onClick={handleAddToCart}>Add To Cart</button>
           </div>
         </div>
       )}

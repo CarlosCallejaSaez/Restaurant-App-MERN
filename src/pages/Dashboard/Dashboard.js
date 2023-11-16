@@ -10,7 +10,6 @@ export default function Dashboard() {
     <div className={classes.container}>
       <div className={classes.menu}>
         {allItems
-          .filter(item => user.isAdmin || !item.forAdmin)
           .map(item => (
             <Link
               to={item.url}
@@ -42,21 +41,5 @@ const allItems = [
     url: '/profile',
     bgColor: '#1565c0',
     color: 'white',
-  },
-  {
-    title: 'Users',
-    imageUrl: '/icons/users.svg',
-    url: '/admin/users',
-    forAdmin: true,
-    bgColor: '#00bfa5',
-    color: 'white',
-  },
-  {
-    title: 'Foods',
-    imageUrl: '/icons/foods.svg',
-    url: '/admin/foods',
-    forAdmin: true,
-    bgColor: '#e040fb',
-    color: 'white',
-  },
+  }
 ];

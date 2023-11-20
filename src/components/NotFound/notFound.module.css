@@ -8,6 +8,12 @@
   height: 15rem;
 }
 
+.container p {
+  display:flex;
+  justify-content: center;
+  padding:10px
+}
+
 .container a {
   font-size: 1rem;
   background-color: #e72929;

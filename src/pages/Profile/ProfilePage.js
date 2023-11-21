@@ -1,11 +1,11 @@
-import React from 'react';
-import { useForm } from 'react-hook-form';
-import { useAuth } from '../../hooks/useAuth';
-import classes from './profilePage.module.css';
-import Title from '../../components/Title/Title';
-import Input from '../../components/Input/Input';
-import Button from '../../components/Button/Button';
-import ChangePassword from '../../components/ChangePassword/ChangePassword';
+import React from "react";
+import { useForm } from "react-hook-form";
+import { useAuth } from "../../hooks/useAuth";
+import classes from "./profilePage.module.css";
+import Title from "../../components/Title/Title";
+import Input from "../../components/Input/Input";
+import Button from "../../components/Button/Button";
+import ChangePassword from "../../components/ChangePassword/ChangePassword";
 
 export default function ProfilePage() {
   const {
@@ -16,7 +16,7 @@ export default function ProfilePage() {
 
   const { user, updateProfile } = useAuth();
 
-  const submit = user => {
+  const submit = (user) => {
     updateProfile(user);
   };
 
@@ -29,7 +29,7 @@ export default function ProfilePage() {
             defaultValue={user.name}
             type="text"
             label="Name"
-            {...register('name', {
+            {...register("name", {
               required: true,
               minLength: 5,
             })}
@@ -39,7 +39,7 @@ export default function ProfilePage() {
             defaultValue={user.address}
             type="text"
             label="Address"
-            {...register('address', {
+            {...register("address", {
               required: true,
               minLength: 10,
             })}

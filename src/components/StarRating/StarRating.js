@@ -1,10 +1,10 @@
-import React from 'react';
-import classes from './starRating.module.css';
+import React from "react";
+import classes from "./starRating.module.css";
 export default function StarRating({ stars, size }) {
   const styles = {
-    width: size + 'px',
-    height: size + 'px',
-    marginRight: size / 6 + 'px',
+    width: size + "px",
+    height: size + "px",
+    marginRight: size / 6 + "px",
   };
 
   function Star({ number }) {
@@ -21,7 +21,7 @@ export default function StarRating({ stars, size }) {
 
   return (
     <div className={classes.rating}>
-      {[1, 2, 3, 4, 5].map(number => (
+      {[1, 2, 3, 4, 5].map((number) => (
         <Star key={number} number={number} />
       ))}
     </div>

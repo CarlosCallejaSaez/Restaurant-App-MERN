@@ -9,9 +9,9 @@
 }
 
 .container p {
-  display:flex;
+  display: flex;
   justify-content: center;
-  padding:10px
+  padding: 10px;
 }
 
 .container a {

@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { useCart } from '../../hooks/useCart';
-import classes from './header.module.css';
-import { useAuth } from '../../hooks/useAuth';
+import React from "react";
+import { Link } from "react-router-dom";
+import { useCart } from "../../hooks/useCart";
+import classes from "./header.module.css";
+import { useAuth } from "../../hooks/useAuth";
 
 export default function Header() {
   const { user, logout } = useAuth();
@@ -13,7 +13,7 @@ export default function Header() {
     <header className={classes.header}>
       <div className={classes.container}>
         <Link to="/" className={classes.logo}>
-        Delicatessen Carlos
+          Delicatessen Carlos
         </Link>
         <nav>
           <ul>
